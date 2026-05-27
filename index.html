@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TUSK Junk Removal & Hauling — Local Crew. Hard Work. Clean Results.</title>
+<meta name="description" content="TUSK Junk Removal & Hauling serves Wenatchee and surrounding areas. Junk removal, furniture removal, garage cleanouts, dump runs, and moving help. Free estimates." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1f1c17;
+    --bg-2: #2a2620;
+    --panel: #25211b;
+    --cream: #efe6cf;
+    --cream-dim: #c9bf9f;
+    --gold: #d4a64a;
+    --rust: #b8531f;
+    --rule: #4a3f2c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--cream);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Oswald', 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { color: #f0c673; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Top bar */
+  .topbar {
+    background: #15120e;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--cream-dim);
+  }
+  .topbar .container {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 10px; padding-bottom: 10px; gap: 16px; flex-wrap: wrap;
+  }
+  .topbar a { color: var(--cream); font-weight: 600; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    background:
+      linear-gradient(rgba(20,17,13,0.78), rgba(20,17,13,0.86)),
+      url('concept-art-1.png') center/cover no-repeat;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    padding: 72px 24px;
+  }
+  .hero img.brand {
+    width: 100%; max-width: 460px; height: auto; display: block;
+    border: 1px solid var(--rule);
+  }
+  .hero h1 {
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.02;
+    color: var(--cream);
+  }
+  .hero h1 .accent { color: var(--gold); display: block; }
+  .hero p.lead {
+    margin: 18px 0 28px;
+    font-size: 18px;
+    color: var(--cream-dim);
+    max-width: 36ch;
+  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 22px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 16px;
+    border: 1px solid var(--gold);
+    color: var(--bg);
+    background: var(--gold);
+    cursor: pointer;
+  }
+  .btn:hover { background: #f0c673; color: var(--bg); }
+  .btn.ghost { background: transparent; color: var(--cream); border-color: var(--cream); }
+  .btn.ghost:hover { background: var(--cream); color: var(--bg); }
+
+  /* Stars divider */
+  .stars {
+    text-align: center; color: var(--gold);
+    letter-spacing: 1em; padding: 12px 0; font-size: 12px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: #15120e;
+  }
+
+  /* Services */
+  .services { padding: 72px 0; background: var(--bg-2); }
+  .section-head { text-align: center; margin-bottom: 48px; }
+  .section-head h2 { font-size: clamp(32px, 4vw, 48px); }
+  .section-head h2 .accent { color: var(--gold); }
+  .section-head .sub { color: var(--cream-dim); margin-top: 8px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 28px 24px;
+  }
+  .card h3 {
+    color: var(--gold);
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .card p { color: var(--cream-dim); margin: 0; font-size: 15px; }
+  .card .icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid var(--gold); color: var(--gold);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: 'Oswald'; font-weight: 700; margin-bottom: 14px;
+  }
+
+  /* Why band */
+  .why {
+    background: #15120e;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 36px 0;
+  }
+  .why-row {
+    display: flex; justify-content: space-around; align-items: center;
+    flex-wrap: wrap; gap: 24px;
+    font-family: 'Oswald'; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--cream);
+    font-size: 18px;
+  }
+  .why-row span .dot { color: var(--gold); margin: 0 14px; }
+
+  /* Contact */
+  .contact {
+    padding: 72px 0;
+    background:
+      linear-gradient(rgba(20,17,13,0.86), rgba(20,17,13,0.92)),
+      url('concept-art-2.png') center/cover no-repeat;
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+    align-items: start;
+  }
+  .contact h2 { font-size: clamp(28px, 3.6vw, 42px); margin-bottom: 18px; }
+  .contact h2 .accent { color: var(--gold); }
+  .info-list { list-style: none; padding: 0; margin: 0; }
+  .info-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 16px; align-items: center;
+    font-size: 17px;
+  }
+  .info-list .label {
+    font-family: 'Oswald'; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--gold);
+    min-width: 90px; font-size: 13px;
+  }
+  .info-list a { color: var(--cream); font-weight: 600; }
+
+  form .field { margin-bottom: 14px; }
+  form label {
+    display: block;
+    font-family: 'Oswald'; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--gold); font-size: 13px;
+    margin-bottom: 6px;
+  }
+  form input, form textarea {
+    width: 100%; padding: 12px 14px;
+    background: #15120e; color: var(--cream);
+    border: 1px solid var(--rule);
+    font-family: inherit; font-size: 15px;
+  }
+  form input:focus, form textarea:focus { outline: 1px solid var(--gold); border-color: var(--gold); }
+  form textarea { min-height: 120px; resize: vertical; }
+
+  /* Footer */
+  footer {
+    background: #100e0a;
+    padding: 28px 0;
+    text-align: center;
+    color: var(--cream-dim);
+    font-size: 14px;
+    border-top: 1px solid var(--rule);
+  }
+  footer .brand-line {
+    font-family: 'Oswald'; color: var(--cream);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 800px) {
+    .hero-inner { grid-template-columns: 1fr; padding: 48px 24px; }
+    .grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Serving Wenatchee &amp; Surrounding Areas</span>
+    <span><a href="tel:5093881508">&#9742; 509-388-1508</a> &nbsp;·&nbsp; <a href="mailto:tuskhauling@gmail.com">tuskhauling@gmail.com</a></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <img class="brand" src="concept-art-1.png" alt="TUSK Junk Removal & Hauling logo" />
+    </div>
+    <div>
+      <h1>
+        Local Crew.<br/>
+        Hard Work.<br/>
+        <span class="accent">Clean Results.</span>
+      </h1>
+      <p class="lead">Junk removal &amp; hauling done right — fair pricing, on-time crews, and a clean haul-out every time.</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:5093881508">Call 509-388-1508</a>
+        <a class="btn ghost" href="#estimate">Free Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stars">★ ★ ★ ★ ★</div>
+
+<section class="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Our <span class="accent">Services</span></h2>
+      <div class="sub">Anything you need gone — we'll load it, haul it, and dispose of it right.</div>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="icon">1</div><h3>Junk Removal</h3><p>Single items to whole-house cleanouts — we handle the lifting and the loading.</p></div>
+      <div class="card"><div class="icon">2</div><h3>Furniture Removal</h3><p>Couches, mattresses, appliances. Old furniture out the door without a scratch on the floor.</p></div>
+      <div class="card"><div class="icon">3</div><h3>Garage &amp; Property Cleanouts</h3><p>Reclaim your space. We clear garages, sheds, yards, and rental turnovers.</p></div>
+      <div class="card"><div class="icon">4</div><h3>Debris Hauling</h3><p>Construction, remodel, and yard debris loaded up and trucked out.</p></div>
+      <div class="card"><div class="icon">5</div><h3>Dump Runs</h3><p>Have a load but no truck? We'll take it to the transfer station so you don't have to.</p></div>
+      <div class="card"><div class="icon">6</div><h3>Moving Help &amp; More</h3><p>Extra hands on moving day, or odd jobs around the property — just ask.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container why-row">
+    <span>Local Crew <span class="dot">★</span></span>
+    <span>Fair Pricing <span class="dot">★</span></span>
+    <span>Reliable Service</span>
+  </div>
+</section>
+
+<section class="contact" id="estimate">
+  <div class="container contact-grid">
+    <div>
+      <h2>Send Photos for a <span class="accent">Free Estimate</span></h2>
+      <p style="color:var(--cream-dim); max-width:46ch;">Text or email a photo of your pile and we'll get back to you with a quote — no on-site visit required.</p>
+      <ul class="info-list">
+        <li><span class="label">Phone</span><a href="tel:5093881508">509-388-1508</a></li>
+        <li><span class="label">Email</span><a href="mailto:tuskhauling@gmail.com">tuskhauling@gmail.com</a></li>
+        <li><span class="label">Facebook</span><span>TUSK Junk Removal &amp; Hauling</span></li>
+        <li><span class="label">Area</span><span>Wenatchee &amp; Surrounding</span></li>
+      </ul>
+    </div>
+    <form onsubmit="event.preventDefault(); window.location='mailto:tuskhauling@gmail.com?subject=Free%20Estimate%20Request&body=' + encodeURIComponent('Name: '+this.name.value+'\nPhone: '+this.phone.value+'\n\n'+this.message.value);">
+      <div class="field"><label for="name">Name</label><input id="name" name="name" required /></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div>
+      <div class="field"><label for="message">What needs to go?</label><textarea id="message" name="message" placeholder="Tell us what you've got — and attach photos when you send."></textarea></div>
+      <button type="submit" class="btn">Request Estimate</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand-line">TUSK Junk Removal &amp; Hauling</div>
+    <div>© <span id="y"></span> TUSK Junk Removal &amp; Hauling — Wenatchee, WA</div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
