@@ -147,13 +147,13 @@
     padding: 36px 0;
   }
   .why-row {
-    display: flex; justify-content: space-around; align-items: center;
-    flex-wrap: wrap; gap: 24px;
+    display: flex; justify-content: center; align-items: center;
+    flex-wrap: wrap; gap: 28px;
     font-family: 'Oswald'; text-transform: uppercase;
     letter-spacing: 0.1em; color: var(--cream);
     font-size: 18px;
   }
-  .why-row span .dot { color: var(--gold); margin: 0 14px; }
+  .why-row .dot { color: var(--gold); font-size: 14px; }
 
   /* Contact */
   .contact {
@@ -270,8 +270,10 @@
 
 <section class="why">
   <div class="container why-row">
-    <span>Local Crew <span class="dot">★</span></span>
-    <span>Fair Pricing <span class="dot">★</span></span>
+    <span>Local Crew</span>
+    <span class="dot" aria-hidden="true">★</span>
+    <span>Fair Pricing</span>
+    <span class="dot" aria-hidden="true">★</span>
     <span>Reliable Service</span>
   </div>
 </section>
