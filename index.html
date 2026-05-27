@@ -288,9 +288,15 @@
         <li><span class="label">Area</span><span>Wenatchee &amp; Surrounding</span></li>
       </ul>
     </div>
-    <form onsubmit="event.preventDefault(); window.location='mailto:tuskhauling@gmail.com?subject=Free%20Estimate%20Request&body=' + encodeURIComponent('Name: '+this.name.value+'\nPhone: '+this.phone.value+'\n\n'+this.message.value);">
+    <form action="https://formsubmit.co/tuskhauling@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New estimate request from tuskhauling.com" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="true" />
+      <input type="hidden" name="_next" value="https://tuskhauling.com/thanks.html" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <div class="field"><label for="name">Name</label><input id="name" name="name" required /></div>
       <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" /></div>
       <div class="field"><label for="message">What needs to go?</label><textarea id="message" name="message" placeholder="Tell us what you've got — and attach photos when you send."></textarea></div>
       <button type="submit" class="btn">Request Estimate</button>
     </form>
