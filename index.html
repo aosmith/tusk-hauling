@@ -132,12 +132,6 @@
     margin-bottom: 8px;
   }
   .card p { color: var(--cream-dim); margin: 0; font-size: 15px; }
-  .card .icon {
-    width: 36px; height: 36px; border-radius: 50%;
-    border: 1px solid var(--gold); color: var(--gold);
-    display: inline-flex; align-items: center; justify-content: center;
-    font-family: 'Oswald'; font-weight: 700; margin-bottom: 14px;
-  }
 
   /* Why band */
   .why {
@@ -215,8 +209,9 @@
 
   @media (max-width: 800px) {
     .hero-inner { grid-template-columns: 1fr; padding: 48px 24px; }
-    .grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; gap: 12px; }
     .contact-grid { grid-template-columns: 1fr; }
+    .card { padding: 20px; }
   }
 </style>
 </head>
@@ -258,12 +253,12 @@
       <div class="sub">Anything you need gone — we'll load it, haul it, and dispose of it right.</div>
     </div>
     <div class="grid">
-      <div class="card"><div class="icon">1</div><h3>Junk Removal</h3><p>Single items to whole-house cleanouts — we handle the lifting and the loading.</p></div>
-      <div class="card"><div class="icon">2</div><h3>Furniture Removal</h3><p>Couches, mattresses, appliances. Old furniture out the door without a scratch on the floor.</p></div>
-      <div class="card"><div class="icon">3</div><h3>Garage &amp; Property Cleanouts</h3><p>Reclaim your space. We clear garages, sheds, yards, and rental turnovers.</p></div>
-      <div class="card"><div class="icon">4</div><h3>Debris Hauling</h3><p>Construction, remodel, and yard debris loaded up and trucked out.</p></div>
-      <div class="card"><div class="icon">5</div><h3>Dump Runs</h3><p>Have a load but no truck? We'll take it to the transfer station so you don't have to.</p></div>
-      <div class="card"><div class="icon">6</div><h3>Moving Help &amp; More</h3><p>Extra hands on moving day, or odd jobs around the property — just ask.</p></div>
+      <div class="card"><h3>Junk Removal</h3><p>Single items to whole-house cleanouts — we handle the lifting and the loading.</p></div>
+      <div class="card"><h3>Furniture Removal</h3><p>Couches, mattresses, appliances. Old furniture out the door without a scratch on the floor.</p></div>
+      <div class="card"><h3>Garage &amp; Property Cleanouts</h3><p>Reclaim your space. We clear garages, sheds, yards, and rental turnovers.</p></div>
+      <div class="card"><h3>Debris Hauling</h3><p>Construction, remodel, and yard debris loaded up and trucked out.</p></div>
+      <div class="card"><h3>Dump Runs</h3><p>Have a load but no truck? We'll take it to the transfer station so you don't have to.</p></div>
+      <div class="card"><h3>Moving Help &amp; More</h3><p>Extra hands on moving day, or odd jobs around the property — just ask.</p></div>
     </div>
   </div>
 </section>
@@ -297,8 +292,9 @@
       <input type="hidden" name="_next" value="https://tuskhauling.com/thanks.html" />
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <div class="field"><label for="name">Name</label><input id="name" name="name" required /></div>
-      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required /></div>
-      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" /></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" pattern="[\s\-\(\)\.\+0-9]{10,}" title="Enter a valid phone number" placeholder="509-555-0123" /></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" /></div>
+      <p id="contact-hint" style="color:var(--cream-dim); font-size:13px; margin:-6px 0 12px;">Provide a phone number or email so we can get back to you.</p>
       <div class="field"><label for="message">What needs to go?</label><textarea id="message" name="message" placeholder="Tell us what you've got — and attach photos when you send."></textarea></div>
       <button type="submit" class="btn">Request Estimate</button>
     </form>
@@ -312,7 +308,26 @@
   </div>
 </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  (function () {
+    var form = document.querySelector('form[action*="formsubmit.co"]');
+    if (!form) return;
+    var phone = form.querySelector('#phone');
+    var email = form.querySelector('#email');
+    function sync() {
+      var hasPhone = phone.value.trim() !== '';
+      var hasEmail = email.value.trim() !== '';
+      var msg = (hasPhone || hasEmail) ? '' : 'Enter a valid phone number or email.';
+      phone.setCustomValidity(msg);
+      email.setCustomValidity(msg);
+    }
+    phone.addEventListener('input', sync);
+    email.addEventListener('input', sync);
+    form.addEventListener('submit', sync);
+    sync();
+  })();
+</script>
 
 </body>
 </html>
