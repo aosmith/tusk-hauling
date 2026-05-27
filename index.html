@@ -214,6 +214,8 @@
     .card { padding: 20px; }
     .why-row { flex-direction: column; gap: 10px; font-size: 16px; }
     .why-row .dot { display: none; }
+    .why-row span:not(.dot)::before,
+    .why-row span:not(.dot)::after { content: "★"; color: var(--gold); margin: 0 10px; font-size: 12px; vertical-align: middle; }
   }
 </style>
 </head>
